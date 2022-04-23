@@ -17,9 +17,14 @@ const Home: NextPage = () => {
           <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
         </div>
 
-        <Link href="/result">
-          <div>
-            <p className={`text-blue-300 ${style.link}`}>診断する</p>
+        <Link href="/start">
+          <div className="">
+            <a
+              className={`font-bold text-center text-blue-300 ${style.link} hover:cursor-pointer hover:bg-red-300`}
+            >
+              診断する
+            </a>
+            <p className={`text-4xl text-center`}>あああ</p>
             <span></span>
           </div>
         </Link>
