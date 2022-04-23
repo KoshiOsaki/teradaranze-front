@@ -20,12 +20,11 @@ export const RankCard = () => {
   return (
     <>
       <div
-        className="hover:bg-pink-300 p-2 m-2 rounded-lg bg-slate-300"
+        className="hover:bg-pink-300 p-2 m-2 rounded-lg bg-slate-300 text-center"
         onClick={onClickOpen}
       >
         <p>縦比</p>
-        <p className="text-lg">A</p>
-        <button>詳細</button>
+        <p className="text-2xl text-pink-600">A</p>
       </div>
       {modal ? (
         <div className="" style={overlay} onClick={onClickOpen}>

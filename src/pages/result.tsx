@@ -114,26 +114,10 @@ const Result: NextPage = () => {
             </div>
             <p>目の評価</p>
             <div className="grid grid-cols-4 sm:block">
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
+              <RankCard />
+              <RankCard />
+              <RankCard />
+              <RankCard />
             </div>
             <p>鼻の評価</p>
             <div className="grid grid-cols-4 sm:block">
