@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { Meta } from "../components/templates/Meta";
-import { Layout } from "../components/templates/Layout";
-import { Container } from "../components/templates/Container";
+import { Meta } from "../components/Meta";
+import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
 import style from "../styles/index.module.css";
 import Link from "next/link";
 

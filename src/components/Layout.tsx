@@ -6,9 +6,7 @@ export const Layout: FC = ({ children }) => {
   return (
     <div className="bg-gray-300">
       <Header />
-      <div className="pt-[100px]"> 
-      {children}
-      </div>
+      <div className="pt-[100px]">{children}</div>
       <Footer />
     </div>
   );

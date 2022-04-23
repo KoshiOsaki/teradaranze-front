@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { Meta } from "../components/templates/Meta";
-import { Layout } from "../components/templates/Layout";
-import { Container } from "../components/templates/Container";
+import { Meta } from "../components/Meta";
+import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
