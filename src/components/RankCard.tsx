@@ -24,13 +24,13 @@ export const RankCard = () => {
         onClick={onClickOpen}
       >
         <p>縦比</p>
-        <p className="text-2xl text-pink-600">A</p>
+        <p className="text-2xl text-pink-600">S</p>
       </div>
       {modal ? (
         <div className="" style={overlay} onClick={onClickOpen}>
-          <div className="z-10 w-[70%] xl:w-[800px] h-[450px] p-5 mt-[100px] bg-white overflow-auto rounded-lg">
+          <div className="z-10 w-[70%] xl:w-[600px] h-[450px] p-5 mt-[100px] bg-white overflow-auto rounded-lg">
             <div className="relative">
-              <p className="text-lg font-bold inline">いい</p>
+              <p className="text-lg font-bold inline">顔全体の評価：縦比</p>
               <button
                 className="bg-gray-500 hover:bg-gray-600 text-white rounded-full inline-block w-[30px] p-auto absolute top-1 right-0"
                 onClick={onClickOpen}
@@ -41,7 +41,7 @@ export const RankCard = () => {
 
             <div className="p-2 ">
               <div className="p-2 mb-3">
-                <dt className="">【使った技術】</dt>
+                <dt className="">素晴らしいバランスです！</dt>
                 <dd></dd>
               </div>
             </div>

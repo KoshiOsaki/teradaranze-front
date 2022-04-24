@@ -14,17 +14,20 @@ const Home: NextPage = () => {
       <Meta />
       <Container>
         <FadeIn>
-          <div className="text-center mt-9">
+          <div className="text-center mt-9 w-[70%] mx-auto leading-7">
             <p className="font-bold text-lg mb-6">
               このページは自分の顔を「理想の顔」と比較できるサイトです。
             </p>
             <p>人の顔の好みは人それぞれで、評価するのは難しいです。</p>
             <p>
-              そこでこのサイトでは、あなたの理想の顔の芸能人を数人選択することで、あなた自身の「理想の顔」と比べた時の顔の部位毎のアドバイスを得られ、理想の顔に近づくための方針を得ることができます。
+              そこでこのサイトでは、あなたの理想の顔の芸能人を数人選択することで、
+              <br />
+              その顔と比べた時のあなたの顔の部位別のアドバイスを得られ、理想の顔に
+              <br />
+              近づくための方針を得ることができます。
             </p>
           </div>
         </FadeIn>
-
         <SlideShow />
         <div className="mt-20">
           <LargeButton text="診断する" href="/start" />

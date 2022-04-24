@@ -7,48 +7,48 @@ export const SlideShow: FC = () => {
       <div className={`${style.wrap}`}>
         <ul className={`${style.slideshow}`}>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/teradaranze.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/miyatamanamo.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/saitouasuka.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/teradaranze.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/yamaguchiharuyo.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/yodayuki.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/moriyarena.jpeg" />
           </li>
         </ul>
         <ul className={`${style.slideshow}`}>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/teradaranze.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/miyatamanamo.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/saitouasuka.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/teradaranze.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/yamaguchiharuyo.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/yodayuki.jpeg" />
           </li>
           <li className={`${style.content}`}>
-            <img src="/shikaruneko.png" />
+            <img src="/moriyarena.jpeg" />
           </li>
         </ul>
       </div>
