@@ -5,9 +5,10 @@ import { Container } from "../components/Container";
 import { RankCard } from "../components/RankCard";
 import { useState } from "react";
 import { ToggleList } from "../components/ToggleList";
+import { FadeIn } from "../components/FadeIn";
 
 const Result: NextPage = () => {
-  const [isOpen, setOpenState] = useState(true);
+  const [isOpen, setOpenState] = useState(false);
   const ClickHandler = () => setOpenState(!isOpen);
   return (
     <Layout>
@@ -29,144 +30,177 @@ const Result: NextPage = () => {
             className="w-[200px] inline mx-9"
           />
         </div>
-        <div className="bg-pink-100 my-9">
-          <p className="text-center mt-8">
-            選んだ5人のうち、最も近いのは白石麻衣です。
-          </p>
-          <div className="flex">
-            <div className="text-center">
-              <img
-                src="/shikaruneko.png"
-                alt=""
-                className="w-[100px] inline mx-9"
-              />
-              <p>45％</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/shikaruneko.png"
-                alt=""
-                className="w-[100px] inline mx-9"
-              />
-              <p>45％</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/shikaruneko.png"
-                alt=""
-                className="w-[100px] inline mx-9"
-              />
-              <p>45％</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/shikaruneko.png"
-                alt=""
-                className="w-[100px] inline mx-9"
-              />
-              <p>45％</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/shikaruneko.png"
-                alt=""
-                className="w-[100px] inline mx-9"
-              />
-              <p>45％</p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-pink-100 my-9">
-          <p>あなたの理想の顔と比べた時のポイントはコチラ</p>
-          <p className="text-red-500">Good</p>
-          <p>・目の左右バランスがよい</p>
-          <p>・目の左右バランスがよい</p>
-          <p className="text-blue-600">Bad</p>
-          <div className="flex">
-            <p className="mr-5">・顔の幅が広い</p>
-            <div>
-              <p>他のユーザーはこんなサイトを見ています</p>
-              <p>html://aaaaaa</p>
-              <p>html://aaaaaa</p>
-              <p>html://aaaaaa</p>
+        <FadeIn>
+          <div className="bg-pink-100 my-9">
+            <p className="text-center mt-8">
+              選んだ5人のうち、最も近いのは白石麻衣です。
+            </p>
+            <div className="flex">
+              <div className="text-center">
+                <img
+                  src="/shikaruneko.png"
+                  alt=""
+                  className="w-[100px] inline mx-9"
+                />
+                <p>45％</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/shikaruneko.png"
+                  alt=""
+                  className="w-[100px] inline mx-9"
+                />
+                <p>45％</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/shikaruneko.png"
+                  alt=""
+                  className="w-[100px] inline mx-9"
+                />
+                <p>45％</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/shikaruneko.png"
+                  alt=""
+                  className="w-[100px] inline mx-9"
+                />
+                <p>45％</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/shikaruneko.png"
+                  alt=""
+                  className="w-[100px] inline mx-9"
+                />
+                <p>45％</p>
+              </div>
             </div>
           </div>
-          <div className="flex">
-            <p className="mr-5">・顔の幅が広い</p>
-            <div>
-              <p>他のユーザーはこんなサイトを見ています</p>
-              <p>html://aaaaaa</p>
-              <p>html://aaaaaa</p>
-              <p>html://aaaaaa</p>
-            </div>
-          </div>
-        </div>
+        </FadeIn>
 
-        <div>
-          <span onClick={ClickHandler}>+評価の詳細を見る</span>
-          <ToggleList isOpen={isOpen}>
-            <p>顔全体の評価</p>
-            <div className="grid grid-cols-4 sm:block">
-              <RankCard />
-              <RankCard />
-              <RankCard />
-              <RankCard />
-            </div>
-            <p>目の評価</p>
-            <div className="grid grid-cols-4 sm:block">
-              <RankCard />
-              <RankCard />
-              <RankCard />
-              <RankCard />
-            </div>
-            <p>鼻の評価</p>
-            <div className="grid grid-cols-4 sm:block">
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
+        <FadeIn>
+          <div className="bg-pink-100 my-9">
+            <p>あなたの理想の顔と比べた時のポイントはコチラ</p>
+            <p className="text-red-500">Good</p>
+            <p>・目の左右バランスがよい</p>
+            <p>・目の左右バランスがよい</p>
+            <p className="text-blue-600">Bad</p>
+            <div className="flex">
+              <p className="mr-5">・顔の幅が広い</p>
+              <div>
+                <p>他のユーザーはこんなサイトを見ています</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
               </div>
             </div>
-            <p>口元の評価</p>
-            <div className="grid grid-cols-4 sm:block">
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
-              </div>
-              <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
-                <p>縦比</p>
-                <p>A</p>
-                <button>詳細</button>
+            <div className="flex">
+              <p className="mr-5">・顔の幅が広い</p>
+              <div>
+                <p>他のユーザーはこんなサイトを見ています</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
               </div>
             </div>
-          </ToggleList>
-        </div>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div className="mt-20 bg-red-400">
+            <span onClick={ClickHandler}>+評価の詳細を見る</span>
+            <ToggleList isOpen={isOpen}>
+              <p>顔全体の評価</p>
+              <div className="grid grid-cols-4 sm:block">
+                <RankCard />
+                <RankCard />
+                <RankCard />
+                <RankCard />
+              </div>
+              <p>目の評価</p>
+              <div className="grid grid-cols-4 sm:block">
+                <RankCard />
+                <RankCard />
+                <RankCard />
+                <RankCard />
+              </div>
+              <p>鼻の評価</p>
+              <div className="grid grid-cols-4 sm:block">
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+              </div>
+              <p>口元の評価</p>
+              <div className="grid grid-cols-4 sm:block">
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+                <div className="rounded-lg shadow-xl border bg-slate-50 w-[95%] mb-7 ">
+                  <p>縦比</p>
+                  <p>A</p>
+                  <button>詳細</button>
+                </div>
+              </div>
+            </ToggleList>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div className="bg-pink-100 my-9">
+            <p>あなたの理想の顔と比べた時のポイントはコチラ</p>
+            <p className="text-red-500">Good</p>
+            <p>・目の左右バランスがよい</p>
+            <p>・目の左右バランスがよい</p>
+            <p className="text-blue-600">Bad</p>
+            <div className="flex">
+              <p className="mr-5">・顔の幅が広い</p>
+              <div>
+                <p>他のユーザーはこんなサイトを見ています</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+              </div>
+            </div>
+            <div className="flex">
+              <p className="mr-5">・顔の幅が広い</p>
+              <div>
+                <p>他のユーザーはこんなサイトを見ています</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+                <p>html://aaaaaa</p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </Container>
     </Layout>
   );

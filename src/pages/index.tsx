@@ -4,35 +4,32 @@ import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
 import style from "../styles/index.module.css";
 import Link from "next/link";
+import { LargeButton } from "../components/LargeButton";
+import { SlideShow } from "../components/SlideShow";
+import { FadeIn } from "../components/FadeIn";
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <Meta />
       <Container>
-        <p>このページは〜</p>
-        <div>
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
-        </div>
-
-        <Link href="/start">
-          <div className="">
-            <a
-              className={`font-bold text-center text-blue-300 ${style.link} hover:cursor-pointer hover:bg-red-300`}
-            >
-              診断する
-            </a>
-            <p className={`text-4xl text-center`}>あああ</p>
-            <span></span>
+        <FadeIn>
+          <div className="text-center mt-9">
+            <p className="font-bold text-lg mb-6">
+              このページは自分の顔を「理想の顔」と比較できるサイトです。
+            </p>
+            <p>人の顔の好みは人それぞれで、評価するのは難しいです。</p>
+            <p>
+              そこでこのサイトでは、あなたの理想の顔の芸能人を数人選択することで、あなた自身の「理想の顔」と比べた時の顔の部位毎のアドバイスを得られ、理想の顔に近づくための方針を得ることができます。
+            </p>
           </div>
-        </Link>
-        <div>
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
-          <img src="/shikaruneko.png" alt="" className="w-[200px] inline" />
+        </FadeIn>
+
+        <SlideShow />
+        <div className="mt-20">
+          <LargeButton text="診断する" href="/start" />
         </div>
+        <SlideShow />
       </Container>
     </Layout>
   );

@@ -1,0 +1,44 @@
+.default {
+  box-sizing: border-box;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.content {
+  width: 300px;
+  height: 195px;
+  margin-right: 4px;
+}
+
+.wrap {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+
+@media (max-width: 599px) {
+  .wrap {
+    height: 200px;
+  }
+
+  .content {
+    width: 200px;
+    height: 130px;
+    margin-right: 4px;
+  }
+}
+
+.slideshow {
+  display: flex;
+  animation: loop-slide 70s infinite linear 2s both;
+}
+
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

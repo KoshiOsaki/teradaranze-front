@@ -1,0 +1,25 @@
+.arrow {
+  position: absolute;
+  top: 42%;
+  left: 75%;
+  transition: left 0.1s linear;
+}
+
+.button {
+  position: relative;
+}
+
+.button:hover .arrow {
+  left: 80%;
+  transition: left 0.1s linear;
+}
+
+@media (max-width: 600px) {
+  .arrow {
+    left: 85%;
+  }
+
+  .button:hover .arrow {
+    left: 90%;
+  }
+}

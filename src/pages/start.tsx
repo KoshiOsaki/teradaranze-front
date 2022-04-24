@@ -4,10 +4,11 @@ import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ImgDropZone } from "../components/ImgDropZone";
 
 const Start: NextPage = () => {
   const router = useRouter();
-  const [img, setImg] = useState();
+  const [img, setImg] = useState("テスト");
   const onClickStart = () => {
     if (img != null) {
       router.push("/select");
@@ -25,7 +26,7 @@ const Start: NextPage = () => {
           <div className="flex">
             <div className="w-[50%] mt-10">
               <p>自分の写真をアップロードしてください↓</p>
-              <div></div>
+              <ImgDropZone />
             </div>
 
             <div>
