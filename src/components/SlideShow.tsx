@@ -1,5 +1,5 @@
 import { FC } from "react";
-import style from "../styles/RecruitSlideShow.module.css";
+import style from "../styles/SlideShow.module.css";
 
 export const SlideShow: FC = () => {
   return (

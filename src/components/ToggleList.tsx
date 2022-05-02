@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import style from "../styles/toggleList.module.css";
+// import style from "../styles/ToggleList.module.css";
 
 interface Props {
   isOpen: boolean;
@@ -7,7 +7,5 @@ interface Props {
 }
 
 export const ToggleList: FC<Props> = ({ isOpen, children }) => {
-  return (
-    <div className={`${isOpen ? style.open : style.close}`}>{children}</div>
-  );
+  return <div>{children}</div>;
 };

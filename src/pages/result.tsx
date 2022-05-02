@@ -3,19 +3,73 @@ import { Meta } from "../components/Meta";
 import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
 import { RankCard } from "../components/RankCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToggleList } from "../components/ToggleList";
 import { FadeIn } from "../components/FadeIn";
+import { Img } from "../types/img";
+import axios from "axios";
 
 const Result: NextPage = () => {
   const [isOpen, setOpenState] = useState(false);
   const ClickHandler = () => setOpenState(!isOpen);
+  useEffect(() => {
+    try {
+      //Img[]の型で寺田蘭世＋選択した4人の結果、本人画像を赤枠で囲った画像のpathを取得
+      const _image: Promise<Img[]> = axios.get("#").then((res) => {
+        return res.data;
+      });
+      // await setImage(_image)
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  //仮データ
+  const result: Img[] = [
+    {
+      path: "/teradaranze.jpeg",
+      name: "寺田蘭世",
+      percent: 1,
+    },
+    {
+      path: "/miyatamanamo.jpeg",
+      name: "宮田まほの",
+      percent: 2,
+    },
+    {
+      path: "/yamaguchiharuyo.jpeg",
+      name: "山口はるよ",
+      percent: 3,
+    },
+    {
+      path: "/yodayuki.jpeg",
+      name: "与田祐希",
+      percent: 4,
+    },
+    {
+      path: "kanemuramiku.jpeg",
+      name: "金村美玖",
+      percent: 5,
+    },
+  ];
+
+  //最も近い人を取得
+  let maxPercentageImage: any;
+  const _result: Img[] = [...result];
+  _result.sort((a, b): any => {
+    if (a.percent && b.percent) {
+      return b.percent - a.percent;
+    }
+  });
+  maxPercentageImage = _result.splice(0, 1)[0];
+  console.log(maxPercentageImage);
+
   return (
     <Layout>
       <Meta />
       <Container>
         <p className="font-bold text-center text-blue-400 text-6xl ">
-          あなたは寺田蘭世に0.6%似ています！
+          あなたは{result[0].name}に{result[0].percent}%似ています！
         </p>
         <div className="text-center">
           <img
@@ -33,54 +87,24 @@ const Result: NextPage = () => {
           <div className="bg-blue-400 my-9 p-3">
             <p className="text-center mt-8 font-bold text-4xl">
               選んだ5人のうち、最も近いのは
-              <span className="text-red-600">宮田愛萌</span>です。
+              <span className="text-red-600">
+                {maxPercentageImage && maxPercentageImage.name}
+              </span>
+              です。
             </p>
             <div className="flex">
-              <div className="text-center">
-                <img
-                  src="/teradaranze.jpeg"
-                  alt=""
-                  className="w-[100px] inline mx-9"
-                />
-                <p>寺田蘭世</p>
-                <p>0.6％</p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/miyatamanamo.jpeg"
-                  alt=""
-                  className="w-[100px] inline mx-9"
-                />
-                <p>宮田愛萌</p>
-                <p>49％</p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/yamaguchiharuyo.jpeg"
-                  alt=""
-                  className="w-[100px] inline mx-9"
-                />
-                <p>山口陽世</p>
-                <p>16％</p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/yodayuki.jpeg"
-                  alt=""
-                  className="w-[100px] inline mx-9"
-                />
-                <p>与田祐希</p>
-                <p>0.03％</p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/kanemuramiku.jpeg"
-                  alt=""
-                  className="w-[100px] inline mx-9"
-                />
-                <p>金森美玖</p>
-                <p>35％</p>
-              </div>
+              {result &&
+                result.map((res: Img) => (
+                  <div key={res.name} className="text-center">
+                    <img
+                      src={res.path}
+                      alt=""
+                      className="w-[100px] inline mx-9"
+                    />
+                    <p>{res.name}</p>
+                    <p>{res.percent}％</p>
+                  </div>
+                ))}
             </div>
           </div>
         </FadeIn>

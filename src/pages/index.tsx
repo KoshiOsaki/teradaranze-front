@@ -2,8 +2,6 @@ import type { NextPage } from "next";
 import { Meta } from "../components/Meta";
 import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
-import style from "../styles/index.module.css";
-import Link from "next/link";
 import { LargeButton } from "../components/LargeButton";
 import { SlideShow } from "../components/SlideShow";
 import { FadeIn } from "../components/FadeIn";

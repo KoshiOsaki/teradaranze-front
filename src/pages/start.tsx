@@ -4,16 +4,25 @@ import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { ImgDropZone } from "../components/ImgDropZone";
+import { useDropzone } from "react-dropzone";
+import axios from "axios";
 
 const Start: NextPage = () => {
   const router = useRouter();
-  const [img, setImg] = useState("テスト");
-  const onClickStart = () => {
-    if (img != null) {
-      router.push("/select");
-    } else {
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+  const onClickStart = async () => {
+    try {
+      if (acceptedFiles != undefined) {
+        //画像のpathを1枚送信。人が2人いるエラー、顔認識できないエラーとかあればここで返してもらう？
+        await axios.post("#", acceptedFiles[0].name);
+        console.log(acceptedFiles[0].name);
+        router.push("/select");
+      } else {
+        alert("画像がアップされていません");
+      }
+    } catch (error) {
       alert("画像がアップされていません");
+      console.log(error);
     }
   };
 
@@ -26,7 +35,17 @@ const Start: NextPage = () => {
           <div className="flex">
             <div className="w-[50%] mt-10">
               <p>自分の写真をアップロードしてください↓</p>
-              <ImgDropZone />
+              <div className="bg-red-200 m-5 p-4">
+                <div {...getRootProps({ className: "dropzone" })}>
+                  <input {...getInputProps()} />
+                  <p>クリックしてファイルを選択</p>
+                </div>
+                <ul>
+                  {acceptedFiles.map((file: File) => (
+                    <li key="file">{file.name}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div>

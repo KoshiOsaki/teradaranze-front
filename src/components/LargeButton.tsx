@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import style from "../styles/RecruitButton.module.css";
+import style from "../styles/Button.module.css";
 import { Glass } from "./Glass";
 
 interface Props {
