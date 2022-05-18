@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import style from "../styles/ToggleList.module.css";
+import style from "../styles/Toggle.module.css";
 
 interface Props {
   isOpen: boolean;
