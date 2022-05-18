@@ -1,5 +1,5 @@
 export interface Img {
-  path: string;
+  src: string;
   name: string;
-  percent?: number;
+  percent: number;
 }

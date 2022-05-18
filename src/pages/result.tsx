@@ -8,50 +8,44 @@ import { ToggleList } from "../components/ToggleList";
 import { FadeIn } from "../components/FadeIn";
 import { Img } from "../types/img";
 import axios from "axios";
+import { useRecoilState } from "recoil";
+import { selectedActorsState } from "../store/selectedActorsState";
+import { useRouter } from "next/router";
 
 const Result: NextPage = () => {
+  const router = useRouter();
   const [isOpen, setOpenState] = useState(false);
+  const [result, setResult] = useState<Img[]>([]);
+  const [selectedActors, setSelectedActors] =
+    useRecoilState(selectedActorsState);
+  const [userImg, setUserImg] = useState();
+
   const ClickHandler = () => setOpenState(!isOpen);
   useEffect(() => {
-    try {
-      //Img[]の型で寺田蘭世＋選択した4人の結果、本人画像を赤枠で囲った画像のpathを取得
-      const _image: Promise<Img[]> = axios.get("#").then((res) => {
-        return res.data;
-      });
-      // await setImage(_image)
-    } catch (error) {
-      console.log(error);
-    }
+    (async () => {
+      try {
+        console.log(selectedActors);
+        const response = await axios.post(
+          "https://whispering-hollows-31833.herokuapp.com/result",
+          selectedActors,
+          {
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        );
+        console.log(response);
+        setUserImg(response.data.userImg);
+        setResult(response.data.result);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
-  //仮データ
-  const result: Img[] = [
-    {
-      path: "/teradaranze.jpeg",
-      name: "寺田蘭世",
-      percent: 1,
-    },
-    {
-      path: "/miyatamanamo.jpeg",
-      name: "宮田まほの",
-      percent: 2,
-    },
-    {
-      path: "/yamaguchiharuyo.jpeg",
-      name: "山口はるよ",
-      percent: 3,
-    },
-    {
-      path: "/yodayuki.jpeg",
-      name: "与田祐希",
-      percent: 4,
-    },
-    {
-      path: "kanemuramiku.jpeg",
-      name: "金村美玖",
-      percent: 5,
-    },
-  ];
+  const onClickRetry = () => {
+    router.push("/start");
+  };
 
   //最も近い人を取得
   let maxPercentageImage: any;
@@ -62,14 +56,13 @@ const Result: NextPage = () => {
     }
   });
   maxPercentageImage = _result.splice(0, 1)[0];
-  console.log(maxPercentageImage);
 
   return (
     <Layout>
       <Meta />
       <Container>
         <p className="font-bold text-center text-blue-400 text-6xl ">
-          あなたは{result[0].name}に{result[0].percent}%似ています！
+          あなたは{result[0]?.name}に{result[0]?.percent}%似ています！
         </p>
         <div className="text-center">
           <img
@@ -97,7 +90,7 @@ const Result: NextPage = () => {
                 result.map((res: Img) => (
                   <div key={res.name} className="text-center">
                     <img
-                      src={res.path}
+                      src={res.src}
                       alt=""
                       className="w-[100px] inline mx-9"
                     />
@@ -108,6 +101,25 @@ const Result: NextPage = () => {
             </div>
           </div>
         </FadeIn>
+        <div className="text-center">
+          <button
+            onClick={onClickRetry}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-6 mx-auto"
+          >
+            他の顔で試す
+          </button>
+        </div>
+        <p className="text-center mt-32">以下、実装中の機能です。</p>
+        <hr
+          className="bg-black"
+          style={{
+            display: "block",
+            width: "100%",
+            height: "1px",
+            border: "0",
+            borderTop: "1px dashed #cccccc",
+          }}
+        />
 
         <FadeIn>
           <div className="bg-gray-200 my-9">

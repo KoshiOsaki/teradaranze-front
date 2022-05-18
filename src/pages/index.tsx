@@ -16,7 +16,7 @@ const Home: NextPage = () => {
             <p className="font-bold text-lg mb-6">
               このページは自分の顔を「理想の顔」と比較できるサイトです。
             </p>
-            <p>人の顔の好みは人それぞれで、評価するのは難しいです。</p>
+            <p>人の顔の好みは人それぞれで、公正に評価するのは難しいです。</p>
             <p>
               そこでこのサイトでは、あなたの理想の顔の芸能人を数人選択することで、
               <br />
@@ -31,6 +31,9 @@ const Home: NextPage = () => {
           <LargeButton text="診断する" href="/start" />
         </div>
         <SlideShow />
+        <p className="text-sm mt-5 text-center">
+          ※一般公開していないので肖像権等についてはご容赦ください。
+        </p>
       </Container>
     </Layout>
   );

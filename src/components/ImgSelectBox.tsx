@@ -1,24 +1,27 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { selectedActorsState } from "../store/selectedActorsState";
 import { Img } from "../types/img";
 
 export const ImgSelectBox = ({
-  image,
+  actors,
   count,
   setCount,
   selectedImage,
   setSelectedImage,
 }: any) => {
   const router = useRouter();
-
+  const [selectedActors, setSelectedActors] =
+    useRecoilState(selectedActorsState);
   const _selectedImage: Img[] = [];
   const onClickSelect = async (num: number) => {
     if (count <= 3) {
-      setSelectedImage([...selectedImage, image[num]]);
+      setSelectedActors([...selectedActors, actors[num]]);
       setCount(count + 1);
     } else {
-      setSelectedImage([...selectedImage, image[num]]);
+      setSelectedActors([...selectedActors, actors[num]]);
       setTimeout(() => {
         console.log(selectedImage);
       }, 400);
@@ -33,16 +36,16 @@ export const ImgSelectBox = ({
         onClick={() => onClickSelect(0)}
         className="hover:cursor-pointer hover:bg-pink-200 mx-6 border border-gray-500"
       >
-        {image[0] && (
-          <img src={image[0].path} alt="" className="w-[200px] inline" />
+        {actors[0] && (
+          <img src={actors[0].src} alt="" className="w-[200px] inline" />
         )}
       </div>
       <div
         onClick={() => onClickSelect(1)}
         className="hover:cursor-pointer hover:bg-pink-200 mx-6 border border-gray-500"
       >
-        {image[1] && (
-          <img src={image[1].path} alt="" className="w-[200px] inline" />
+        {actors[1] && (
+          <img src={actors[1].src} alt="" className="w-[200px] inline" />
         )}
       </div>
     </div>
