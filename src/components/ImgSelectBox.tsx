@@ -22,11 +22,6 @@ export const ImgSelectBox = ({
       setCount(count + 1);
     } else {
       setSelectedActors([...selectedActors, actors[num]]);
-      setTimeout(() => {
-        console.log(selectedImage);
-      }, 400);
-      //選択した4人のImg[]型データを送信
-      await axios.post("#", selectedImage);
       await router.push("/result");
     }
   };
